@@ -1,0 +1,120 @@
+/* ─────────────────────────────────────────────
+                    reset
+───────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    word-break: break-word;
+}
+
+html,body,h1,h2,h3,h4,h5,h6,p,blockquote,figure,dl,dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    scroll-behavior: smooth;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 기본적으로 스크롤바 보이지 않게 하기 */
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ─────────────────────────────────────────────
+                    common
+───────────────────────────────────────────── */
+
+:root {
+    --color-deepgreen: #203940;
+    --color-lightgreen-highlight: #d3f4d6;
+    --color-lightgreen: #82de89;
+    --color-smoothgreen: #89e8bc;
+    --color-smoothblue: #85d1cf;
+    --color-mgray: #ccc;
+    --color-dgray: #888;
+    --color-black: #121212;
+    --color-night: #001632;
+
+    --color-text-span: #bbb;
+
+    --shadow-normal: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-bold: 0 5px 15px -3px rgba(0, 0, 0, 0.23),
+        0 4px 6px -2px rgba(0, 0, 0, 0.23);
+}
+
+/* 드래그 허용 클래스 */
+.drag {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
