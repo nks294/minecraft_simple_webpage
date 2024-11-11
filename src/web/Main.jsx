@@ -13,6 +13,7 @@ const backgroundImages = [
 function Main() {
 
     const [playerCount, setPlayerCount] = useState(null);
+    const [errorMessage, setErrorMessage] = useState("");
     const [ip] = useState("yourdomain.com");
     const [backgroundImage, setBackgroundImage] = useState("");
 
@@ -52,11 +53,14 @@ function Main() {
                 const result = await response.json();
                 if (result.players) {
                     setPlayerCount(result.players.online);
+                    setErrorMessage("");
                 } else {
-                    setPlayerCount("현재 오프라인 상태입니다.");
+                    setPlayerCount(null);
+                    setErrorMessage("현재 오프라인 상태입니다.");
                 }
             } catch (error) {
-                setPlayerCount("불러오는데 실패했습니다.")
+                setPlayerCount(null);
+                setErrorMessage("서버 정보를 불러오는데 실패했습니다.");
             }
         };
 
@@ -97,7 +101,7 @@ function Main() {
                                     현재 <span className="sip">{playerCount}</span> 명 접속중!
                                 </>
                                 ) : (
-                                    "접속 정보 로드 중..."
+                                    errorMessage || "서버 정보를 불러오고 있습니다..."
                                 )
                             }
                         </p>
