@@ -1,5 +1,4 @@
 # Simple Minecraft Website
-### Preview: [294.moe](https://294.moe)
 - 취미로 운영중인 마인크래프트 서버를 위해 제작했습니다.  
 - 간단한 웹 사이트로, 접속한 인원 수와 서버 정보를 표시합니다.  
 
